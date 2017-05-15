@@ -1,0 +1,119 @@
+os.pullEvent("redstone")
+
+
+
+print("Welcome to the Danoli Roulette")
+
+print(" ")
+
+print("Please type black, red or green")
+		
+	
+
+
+
+
+
+
+x = io.read
+	if x == "red" then
+ 
+	
+	y = math.random(1,15)
+  
+		
+	print(y)
+		
+		if y < 9 then
+  
+			
+		print("you lose")
+  
+		
+		end -- lose
+			
+			if y > 8 then
+  
+			
+			print(" You win ")
+  
+			
+			rs.setOutput("left", true)
+  
+			
+			rs.setOutput("left", true)
+ 
+			
+			end -- less
+
+	
+	end 
+ 
+	
+	
+
+	if x == "black" then
+ 
+		
+	p = math.random(1, 15)
+ 
+		
+	print(p) 
+		
+		if p > 8 or p == 1 then
+  
+			
+		print(" Sorry bro, you lose")
+  
+		
+		end -- lose
+			
+			if p < 9 and p > 1 then
+  
+			
+			print(" You win ")
+  
+			
+			rs.setOutput("left", true)
+  
+			
+			rs.setOutput("left", true)
+ 
+			
+			end -- less 
+	
+	end
+	
+	if x == "green" then
+ 
+		
+	a = math.random(1, 15)
+ 
+		
+	print(a) 
+		
+		if a > 1 then
+  
+			
+		print(" you lose")
+  
+		
+		end -- lose
+			
+			if p == 1 then
+  
+			
+			print(" You win ")
+  
+			
+			rs.setOutput("left", true)
+  
+			
+			rs.setOutput("left", true)
+ 
+			
+			end -- less 
+	
+	end
+	
+	
