@@ -1,119 +1,103 @@
-os.pullEvent("redstone")
-
-
+--Hello Mr.Degano this is my casino code
+--It involves someone placing two iron onto a presure plate for it to start 
+--It is simple game of roulette where players can bet on different colours.
 
 print("Welcome to the Danoli Roulette")
 
 print(" ")
 
-print("Please type black, red or green")
-		
+print("Please type black, red or green to bet")
+
+print("To learn how to play type rules")		
 	
 
-
-
-
-
-
-x = io.read
-	if x == "red" then
- 
+x = io.read()
 	
-	y = math.random(1,15)
-  
-		
-	print(y)
-		
-		if y < 9 then
-  
+--If the player chooses to bet on red or black then this code will randomly choose a number 
+--that takes up 7 out of 15. THerefore giving him a 46 percent chance to win. 
+	
+if x == "red" then
+	y = math.random(1,15) --chooses a random number
+	print("The winning number is " .. y)
+	if y < 9 then --when you loose
+		print("You lose")
+	end 
 			
-		print("you lose")
-  
-		
-		end -- lose
+	if y > 8 then --if you win
 			
-			if y > 8 then
-  
+		print("You win")
 			
-			print(" You win ")
-  
-			
-			rs.setOutput("left", true)
-  
-			
-			rs.setOutput("left", true)
- 
-			
-			end -- less
-
+		for t = 1, 2 do --Gives out an item and doubles it with the for loop
+				
+			rs.setOutput("right", true)
+			os.sleep(1)
+			rs.setOutput("right", false)
+			os.sleep(1)
+		end
 	
 	end 
- 
-	
-	
 
-	if x == "black" then
- 
+	elseif x == "black" then
 		
-	p = math.random(1, 15)
- 
+		p = math.random(1, 15)
+		print("The winning number is" .. p)
 		
-	print(p) 
-		
-		if p > 8 or p == 1 then
-  
+		if p > 8 or p == 1 then --Does this when you loose
+			print("you lose")
+		end
 			
-		print(" Sorry bro, you lose")
-  
-		
-		end -- lose
-			
-			if p < 9 and p > 1 then
-  
-			
+		if p < 9 and p > 1 then
 			print(" You win ")
-  
-			
-			rs.setOutput("left", true)
-  
-			
-			rs.setOutput("left", true)
+				
+			for o = 1, 2 do --Gives out two itens
+					
+				rs.setOutput("right", true)
+				os.sleep(1)
+				rs.setOutput("right", false)
+				os.sleep(1)
+			end
  
-			
-			end -- less 
+		end 
+		
+--If the player chooses green then it will choose a random number and for the
+--player to win the number drawn must be 1
 	
-	end
-	
-	if x == "green" then
- 
+	elseif x == "green" then
+		a = math.random(1, 15) --Chooses a random number
+		print("The winning number is" .. a)
 		
-	a = math.random(1, 15)
- 
-		
-	print(a) 
-		
-		if a > 1 then
-  
+		if a > 1 then --If the number is bigger than 1 then you loose
+			print("you lose")
+		end
 			
-		print(" you lose")
-  
-		
-		end -- lose
-			
-			if p == 1 then
-  
-			
+		if a == 1 then --If the number equals to 1 then you win  
 			print(" You win ")
-  
 			
-			rs.setOutput("left", true)
-  
-			
-			rs.setOutput("left", true)
- 
-			
-			end -- less 
+			for u = 1, 14 do --14x the payout!
+					
+				rs.setOutput("right", true)
+				os.sleep(1)
+				rs.setOutput("right", false)
+				os.sleep(1)
+			end
+ 		
+		end
 	
-	end
+--If the player types "rules" then these strings will explain to him how to play.	
 	
+	elseif x == "rules"	then 
+	
+		print("You may bet on three colours: black, green or red")
+		print("Betting on black or red will give you a 46 percent")
+		print("chance to double your money")
+		print("But betting on green will give you a 7 percent")
+		print("chance to win 14 times the amount bet ")
+	
+--If a player is trying to troll you then this message will appear	
+	else 
+		print("Please enter a valid word")
+	
+end
+
+--This is the end of my code
 	
