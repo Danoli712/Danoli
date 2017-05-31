@@ -138,7 +138,7 @@ if x == "start" then
 		      end 
         end
         
-        if x == "tails" then
+        elseif x == "tails" then
           n = math.random(1, 2)
           
           if n == 1 then
@@ -154,7 +154,6 @@ if x == "start" then
 			       --os.sleep(1) 
 		        end  
           end   
-end
 end
 end
 end
