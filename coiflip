@@ -75,6 +75,8 @@ if x == "start" then --If they choose to play they will hve two options  
             end           
           end                
           
+      --If the player chooses green then it will choose a random number and for the--player to win the number drawn must be 1
+      
       elseif x == "green" then          
         a = math.random(1, 15) --Chooses a random number         
         print("The winning number is " .. a)                
@@ -94,7 +96,7 @@ if x == "start" then --If they choose to play they will hve two options  
             end             
           end            
         
-        else           
+        else --If the player types something that is not psrt of the choices, this will appear        
           print("Please enter a valid word")         
         end       
       
