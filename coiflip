@@ -1,0 +1,140 @@
+--Hello Mr.Degano this is my casino code 
+--It involves someone placing two iron onto a presure plate for it to start  
+--It is simple game of roulette where players can bet on different colours. 
+
+print("Welcome to the Danoli Roulette")    
+print("")    
+print("To start a game type start")    
+print("To learn how to play type rules")  print("")   
+
+x = io.read()
+
+if x == "rules" then        
+  print("")   
+  print("Roulette Rules:")   
+  print("You may bet on three colours: black, green or red")    
+  print("Betting on black or red will give you a 46 percent")    
+  print("chance to double your money")    
+  print("But betting on green will give you a 7 percent")    
+  print("chance to win 14 times the amount bet ")    
+  print("")    
+  print("Coinflip Rules:")    
+  print("You may bet on heads or tails and have a 50/50 chance")   
+  print("of winning. Money is doubled if you win")   
+  
+end  
+
+if x == "start" then    
+  print("Type roulette or coinflip to play ")
+  x = io.read()        
+  
+  if x == "roulette" then      
+    print("Please type black, red or green to bet")            
+    x = io.read()              
+      
+      if x == "red" then           
+        y = math.random(1,15) --chooses a random number           
+        print("The winning number is " .. y)                         
+          
+          if y < 9 then --when you loose              
+            print("YOU LOST")             
+          end                   
+          
+          if y > 8 then --if you win                   
+            print("YOU WON")                   
+            
+            for t = 1, 2 do --Gives out an item and doubles it with the for loop                     
+              rs.setOutput("right", true)               
+              os.sleep(1)               
+              rs.setOutput("right", false)              
+              os.sleep(1)             
+            end               
+          end           
+      
+      elseif x == "black" then          
+        p = math.random(1, 15)         
+        print("The winning number is " .. p)                
+          
+          if p > 8 or p == 1 then --Does this when you loose             
+            print("YOU LOST")            
+          end                 
+          
+          if p < 9 and p > 1 then             
+            print("YOU WON")                       
+            
+            for o = 1, 2 do --Gives out two itens                   
+              rs.setOutput("right", true)            
+              os.sleep(1)            
+              rs.setOutput("right", false)             
+              os.sleep(1)             
+            end           
+          end                
+          
+      elseif x == "green" then          
+        a = math.random(1, 15) --Chooses a random number         
+        print("The winning number is " .. a)                
+        
+          if a > 1 then --If the number is bigger than 1 then you loose             
+            print("YOU LOST")            
+          end                 
+          
+          if a == 1 then --If the number equals to 1 then you win               
+            print("YOU WON")                  
+            
+            for u = 1, 14 do --14x the payout!                     
+              rs.setOutput("right", true)              
+              os.sleep(1)              
+              rs.setOutput("right", false)              
+              os.sleep(1)               
+            end             
+          end            
+        
+        else           
+          print("Please enter a valid word")         
+        end       
+      
+      end
+  
+  if x == "coinflip" then      
+    print("Type heads or tails")            
+    x = io.read()
+        
+        if x == "heads" then         
+          m = math.random(1, 2)                    
+            
+            if m == 1 then             
+              print("It was tails, YOU LOST")          
+            end                    
+            
+            if m == 2 then            
+              print("YOU WON")                        
+              
+              for t = 1, 2 do --Gives out an item and doubles it with the for loop           
+                rs.setOutput("right", true)            
+                os.sleep(1)            
+                rs.setOutput("right", false)           
+                os.sleep(1)         
+              end         
+            end               
+          
+        if x == "tails" then          
+          n = math.random(1, 2)                    
+          
+            if n == 1 then            
+              print("It was heads, YOU LOST")          
+            end                    
+            
+            if n == 2 then             
+              print("YOU WON")            
+              
+              for t = 1, 2 do --Gives out an item and doubles it with the for loop           
+                rs.setOutput("right", true)            
+                os.sleep(1)            
+                rs.setOutput("right", false)           
+                os.sleep(1)           
+              end            
+            end   
+        end
+    end
+  end
+end
